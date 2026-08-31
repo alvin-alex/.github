@@ -1,0 +1,90 @@
+name: Development outcome
+description: Create one bounded feature, improvement, or maintenance outcome.
+title: "[Work]: "
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One issue equals one observable outcome that can be finished in one to three hours.
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What user, business, reliability, or operational problem makes this worth doing?
+      placeholder: Explain the impact and who benefits.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: State one observable result. Split projects or phases into separate issues.
+      placeholder: When complete, what will be measurably or visibly different?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: estimate
+    attributes:
+      label: Estimate
+      description: Split the outcome before filing if it cannot finish within three hours.
+      options:
+        - 1 hour
+        - 2 hours
+        - 3 hours
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: List the observable evidence required before this issue can close.
+      placeholder: |
+        - [ ] Requested behavior works
+        - [ ] Verification evidence is recorded
+        - [ ] Linear and GitHub statuses agree
+    validations:
+      required: true
+
+  - type: input
+    id: linear
+    attributes:
+      label: Linear issue
+      description: Enter the owning Linear identifier.
+      placeholder: ALE-123
+    validations:
+      required: true
+
+  - type: textarea
+    id: traceability
+    attributes:
+      label: Related links
+      description: Add applicable Slack thread, Sentry issue, plan, design, or customer-safe evidence links.
+      placeholder: One link per line. Do not paste credentials or sensitive customer data.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: data_impact
+    attributes:
+      label: Data impact
+      description: Database work requires backup, rollback, and preview or isolated verification evidence.
+      options:
+        - None
+        - Migration
+        - Backup or preview database required
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I have not included credentials or sensitive customer, patient, or financial data.
+          required: true
